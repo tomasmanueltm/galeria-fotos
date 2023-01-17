@@ -57,6 +57,34 @@ body {
   width: 0px !important;
 }
 
+.galeria {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 3rem;
+}
+
+.galeria h2 {
+  padding: 10px;
+  font-size: 2rem;
+  color: #3c5063;
+  font-weight: bold;
+}
+
+.galeria .social {
+  padding: 1rem;
+}
+
+.galeria .social a {
+  color: #1a1b1e;
+  cursor: pointer;
+  margin: 0 .3rem;
+  font-size: 1.2rem;
+}
+
+.galeria .social a:hover {
+  color: #fa4a4d;
+}
+
 .lista {
   width: 65%;
   padding: 2rem;
