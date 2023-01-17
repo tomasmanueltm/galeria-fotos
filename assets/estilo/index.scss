@@ -56,7 +56,6 @@ body
     }
 
 
-
     li
     {
         display: flex;
@@ -71,7 +70,7 @@ body
         @media (max-width: 978px) {
            gap: 2rem;
         }
-        @media (max-width: 628px) {
+        @media (max-width: 638px) {
             gap: 2rem 1rem;
             height: unset;
             flex-flow: column;
@@ -126,7 +125,7 @@ body
         {
             float: left;
             width: 255px;
-            @media (max-width: 628px) {
+            @media (max-width: 638px) {
                 text-align: center;
                 margin-block: 0 2rem;
             }
@@ -201,7 +200,7 @@ body
         &:nth-child(even)
         {
             flex-flow: row-reverse;
-            @media (max-width: 628px) {
+            @media (max-width: 638px) {
                 flex-flow: column;
             }
         }
@@ -211,58 +210,115 @@ body
         }
     }
 }
-
-.form-solicitacao
+.footer
 {
+
     width: 100%;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem 2rem;
     background: #3c5063;
 
+    
+    .form-solicitacao
+    {
+    
+        width: 100%;
+        margin-block: 2rem;
+    
+        div
+        {
+            width: 50%;
+            height: 50px;
+            border-radius: 3px;
+            margin-block-end: 2rem;
+            border: 1px solid #eee;
+
+            @media (max-width: 525px) {
+                width: 90%;
+            }
+            
+            input
+            {
+                width: 100%;
+                border: none;
+                border: none;
+                height: 100%;
+                color: #eee;
+                outline: none;
+                font-weight: 400;
+                padding: 1.2rem .5rem;
+                background: transparent;
+    
+                &::placeholder
+                {
+                    color: #fff;
+                }
+            }
+        }
+        span
+        {
+            color: #fff;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 400;
+            border-radius: 5px;
+            background: #222332;
+        }
+    }
+    p
+    {
+        color: #fff;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        margin-block: 0 2rem;
+    }
+}
+
+.flex
+{
     display: flex;
     flex-flow: column;
     align-items: center;
-
-
-    div
-    {
-        width: 50%;
-        height: 50px;
-        border-radius: 3px;
-        margin-block-end: 2rem;
-        border: 1px solid #eee;
-        
-        input
-        {
-            width: 100%;
-            border: none;
-            border: none;
-            height: 100%;
-            outline: none;
-            padding: 1.2rem;
-            font-weight: 400;
-            background: transparent;
-
-            &::placeholder
-            {
-                color: #fff;
-            }
-        }
-    }
-    span
-    {
-        color: #fff;
-        padding: 1rem;
-        cursor: pointer;
-        font-weight: 400;
-        border-radius: 5px;
-        background: #222332;
-    }
 }
 
 .input-solicitar
 {
     animation: animarInput .1s ease-out infinite;
 }
+
+.message
+{
+    right: 2rem;
+    bottom: 5rem;
+    width: 230px;
+    position: fixed;
+    padding: 1rem 2rem;
+    background: #286b2b;
+    transform: translateX(1000vw);
+    transition: transform .5s ease-out;
+
+
+    @media (max-width: 525px) {
+        right: unset;
+        margin: 0 auto;
+      //  position: absolute;
+    }
+
+    &.on
+    {
+        transform: translateX(0px);
+        transition: transform .5s ease-out;
+    }
+
+    p
+    {
+        color: #eee;
+        font-weight: 400;
+    }
+}
+
+
+
 
 
 @keyframes animarInput {

@@ -11,7 +11,7 @@
     
 
 
-
+<!--  -->
     <ul class="lista">
         <li>
             <figure class="img"><img src="assets/src/a.jpg" alt=""></figure>
@@ -56,36 +56,86 @@
             </div>
         </li>
     </ul>
-    <!-- siga-me -->
 
-    <div class="form-solicitacao">
+    <!-- siga-me -->
+<footer class="footer flex">
+    <div class="form-solicitacao flex">
         <div class="input">
          <input type="text" name="" placeholder="Envia seu email e recebe ingresso" title="Envia seu email e recebe ingresso" id="">
         </div>
         <span class="btn-solicitar">Solicitar Ingresso</span>
     </div>
+    <p>&copy; 2023 - tomasmanueltm</p>
+
+</footer>
+
+
+
+<!-- msg sucesso -->
+<div class="message">
+    <p>Enviada com sucesso</p>
+</div>
+
+
 
 
 <script>
     let $ = (e) => document.querySelector(e);
-    var btn = $(".btn-solicitar"),
-    conometro = 1;
+    var cronometro = 1, 
+    btn = $(".btn-solicitar"),
+    inputFiltro = $(".input input");
 
-        btn.addEventListener("click", function(e){
-            $(".input").classList.add("input-solicitar");
+    var animacaoInput = (()=>{
+        $(".input").classList.add("input-solicitar");
            var  tempo =   setInterval(() => {
-                    conometro++;
-                    console.log(conometro);
-                    if(conometro == 10)
-                    {
+                cronometro++;
+                if(cronometro == 10)
+                {
                         clearInterval(tempo);
-                        conometro = 0;
+                        cronometro = 0;
                         $(".input").classList.remove("input-solicitar");
-                    }
-                }, 50);
-        })
+                }
+        }, 25);
+    }),
+    excluirMsg = (()=>{
+        var  tempoMsg =   setInterval(() => {
+                cronometro++;
+                if(cronometro==2)
+                {
+                    $(".message").classList.add("on");
+                }
+                if(cronometro == 10)
+                {
+                    $(".message").classList.remove("on");
+                    cronometro = 0;
+                    inputFiltro.value = "";
+                    clearInterval(tempoMsg);
+                }
+        }, 550);
+    });
+
+
+    
+    btn.addEventListener("click", function(e){
+        if(inputFiltro.value.length <= 0)
+        {
+            animacaoInput();
+        }
+        else if(inputFiltro.value.includes("@") && inputFiltro.value.includes("."))
+        {
+            excluirMsg();
+
+        }
+        else
+        {
+            animacaoInput();
+        }
+    })
 
         
 </script>
+
 </body>
 </html>
+<!-- 
+ -->

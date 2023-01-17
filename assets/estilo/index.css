@@ -92,7 +92,7 @@ body {
   }
 }
 
-@media (max-width: 628px) {
+@media (max-width: 638px) {
   .lista li {
     gap: 2rem 1rem;
     height: unset;
@@ -154,7 +154,7 @@ body {
   width: 255px;
 }
 
-@media (max-width: 628px) {
+@media (max-width: 638px) {
   .lista li .legenda {
     text-align: center;
     margin-block: 0 2rem;
@@ -225,7 +225,7 @@ body {
   flex-flow: row-reverse;
 }
 
-@media (max-width: 628px) {
+@media (max-width: 638px) {
   .lista li:nth-child(even) {
     flex-flow: column;
   }
@@ -235,16 +235,18 @@ body {
   border: none;
 }
 
-.form-solicitacao {
+.footer {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem 2rem;
   background: #3c5063;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
 }
 
-.form-solicitacao div {
+.footer .form-solicitacao {
+  width: 100%;
+  margin-block: 2rem;
+}
+
+.footer .form-solicitacao div {
   width: 50%;
   height: 50px;
   border-radius: 3px;
@@ -252,22 +254,29 @@ body {
   border: 1px solid #eee;
 }
 
-.form-solicitacao div input {
+@media (max-width: 525px) {
+  .footer .form-solicitacao div {
+    width: 90%;
+  }
+}
+
+.footer .form-solicitacao div input {
   width: 100%;
   border: none;
   border: none;
   height: 100%;
+  color: #eee;
   outline: none;
-  padding: 1.2rem;
   font-weight: 400;
+  padding: 1.2rem .5rem;
   background: transparent;
 }
 
-.form-solicitacao div input::placeholder {
+.footer .form-solicitacao div input::placeholder {
   color: #fff;
 }
 
-.form-solicitacao span {
+.footer .form-solicitacao span {
   color: #fff;
   padding: 1rem;
   cursor: pointer;
@@ -276,8 +285,50 @@ body {
   background: #222332;
 }
 
+.footer p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-block: 0 2rem;
+}
+
+.flex {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 .input-solicitar {
   animation: animarInput .1s ease-out infinite;
+}
+
+.message {
+  right: 2rem;
+  bottom: 5rem;
+  width: 230px;
+  position: fixed;
+  padding: 1rem 2rem;
+  background: #286b2b;
+  transform: translateX(1000vw);
+  transition: transform .5s ease-out;
+}
+
+@media (max-width: 525px) {
+  .message {
+    right: unset;
+    margin: 0 auto;
+  }
+}
+
+.message.on {
+  transform: translateX(0px);
+  transition: transform .5s ease-out;
+}
+
+.message p {
+  color: #eee;
+  font-weight: 400;
 }
 
 @keyframes animarInput {
