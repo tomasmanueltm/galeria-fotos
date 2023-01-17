@@ -92,7 +92,7 @@ body
             content: "";
             padding: 0 .8px;
             position: absolute;
-            background: #1a1b1e;
+            background: #9e9e9e;
 
             @media (max-width: 978px) {
                 display: none;
@@ -212,3 +212,49 @@ body
     }
 }
 
+.form-solicitacao
+{
+    width: 100%;
+    padding: 4rem 2rem;
+    background: #3c5063;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+
+    div
+    {
+        width: 50%;
+        height: 50px;
+        border-radius: 3px;
+        margin-block-end: 2rem;
+        border: 1px solid #eee;
+        
+        input
+        {
+            width: 100%;
+            border: none;
+            border: none;
+            height: 100%;
+            outline: none;
+            padding: 1.2rem;
+            font-weight: 400;
+            background: transparent;
+
+            &::placeholder
+            {
+                color: #fff;
+            }
+        }
+    }
+    span
+    {
+        color: #fff;
+        padding: 1rem;
+        cursor: pointer;
+        font-weight: 400;
+        border-radius: 5px;
+        background: #222332;
+    }
+}
