@@ -258,3 +258,21 @@ body
         background: #222332;
     }
 }
+
+.input-solicitar
+{
+    animation: animarInput .1s ease-out infinite;
+}
+
+
+@keyframes animarInput {
+    to{
+        transform: translateX(-5px);
+        // transition:.2s transform ease-in-out;
+    }
+
+    from{
+        transform: translateX(5px);
+        // transition:.2s transform ease-in-out;
+    }
+}

@@ -59,13 +59,33 @@
     <!-- siga-me -->
 
     <div class="form-solicitacao">
-        <div>
+        <div class="input">
          <input type="text" name="" placeholder="Envia seu email e recebe ingresso" title="Envia seu email e recebe ingresso" id="">
         </div>
         <span class="btn-solicitar">Solicitar Ingresso</span>
     </div>
 
 
+<script>
+    let $ = (e) => document.querySelector(e);
+    var btn = $(".btn-solicitar"),
+    conometro = 1;
 
+        btn.addEventListener("click", function(e){
+            $(".input").classList.add("input-solicitar");
+           var  tempo =   setInterval(() => {
+                    conometro++;
+                    console.log(conometro);
+                    if(conometro == 10)
+                    {
+                        clearInterval(tempo);
+                        conometro = 0;
+                        $(".input").classList.remove("input-solicitar");
+                    }
+                }, 50);
+        })
+
+        
+</script>
 </body>
 </html>

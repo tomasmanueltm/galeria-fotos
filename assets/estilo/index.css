@@ -275,3 +275,16 @@ body {
   border-radius: 5px;
   background: #222332;
 }
+
+.input-solicitar {
+  animation: animarInput .1s ease-out infinite;
+}
+
+@keyframes animarInput {
+  to {
+    transform: translateX(-5px);
+  }
+  from {
+    transform: translateX(5px);
+  }
+}
