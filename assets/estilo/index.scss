@@ -25,8 +25,10 @@ body
     --color6: #222332;
     --color7: #1a1b1e;
     --atual : #388e3c;
+
+    background: #eee;
+    overflow-x: hidden;	
 }
-    // overflow-x: hidden	
 	
 	
 ::scrollbar  { width: 0px!important}
@@ -36,3 +38,176 @@ body
 *::-ms-scrollbar  { width: 0px!important}
 *::-moz-osx-scrollbar { width: 0px!important}
 *::-o-scrollbar { width: 0px!important}
+
+.lista
+{
+    width: 65%;
+    padding: 2rem;
+    margin: 0 auto;
+
+    @media (max-width: 768px)
+    {
+        width: 75%;
+    }
+    
+    @media (max-width: 320px)
+    {
+        width: 100%;
+    }
+
+
+
+    li
+    {
+        display: flex;
+        flex-flow: row;
+        height: 300px;
+        padding: 1rem 0;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #9e9e9e;
+
+        @media (max-width: 978px) {
+           gap: 2rem;
+        }
+        @media (max-width: 628px) {
+            gap: 2rem 1rem;
+            height: unset;
+            flex-flow: column;
+            margin-block-end: 2rem;
+        }
+        @media (max-width: 320px)
+        {
+            padding: 2rem;
+        }
+
+
+
+        &::before
+        {
+            top: 0;
+            left: 50%;
+            height: 100%;
+            content: "";
+            padding: 0 .8px;
+            position: absolute;
+            background: #1a1b1e;
+
+            @media (max-width: 978px) {
+                display: none;
+            }
+        }
+
+        figure
+        {
+            width: 255px;
+            height: 255px;
+            overflow: hidden;
+
+            @media (max-width: 425px) {
+                border-radius: 5px;
+            }
+            @media (max-width: 320px)
+            {
+                padding: 1.5rem;
+                width: 220px;
+                height: 220px;
+            }
+
+            img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .legenda
+        {
+            float: left;
+            width: 255px;
+            @media (max-width: 628px) {
+                text-align: center;
+                margin-block: 0 2rem;
+            }
+
+            h2
+            {
+                font-size: 5rem;
+                color: #f44336;
+                font-weight: 900;
+                position: relative;
+
+                @media (max-width: 925px) {
+                    font-size: 3em;
+                }
+
+                small
+                {
+                    font-size: 1rem;
+                    padding-left: 1rem;
+                }
+
+                &::after
+                {
+                    left: 3px;
+                    width: 5%;
+                    content: "";
+                    padding: .5rem 1rem;
+                    display: block;
+                    position: relative;
+                    border-top: 2px solid #f44336;
+
+                    @media (max-width: 925px) {
+                       left: 4.5rem;
+                    }
+                }
+            }
+            .paragrafo
+            {
+                display: block;
+
+                p
+                {
+                    font-size: .8rem;
+                    padding: .6rem 0;
+
+                    i
+                    {
+                        padding: .2rem;
+                        font-weight: bold;
+                        border-radius: 50%;
+                        border-top: 2px solid #1a1b1e;
+                    }
+                }
+                h5
+                {
+                    line-height: 1.2rem;
+                    font-weight: 900!important;
+                }
+            }
+        }
+
+
+
+        &:first-child
+        {
+            figure
+            {
+                top: -.5rem;
+                position: relative;
+            }
+        }
+        &:nth-child(even)
+        {
+            flex-flow: row-reverse;
+            @media (max-width: 628px) {
+                flex-flow: column;
+            }
+        }
+        &:last-child
+        {
+            border: none;
+        }
+    }
+}

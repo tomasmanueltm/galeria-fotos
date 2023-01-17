@@ -27,7 +27,7 @@
   .bi-bag-check::before { content: "\f178"; }
   .bi-bag-check::before { content: "\f179"; }
   .bi-joystick::before { content: "\f448"; }
-  .bi-geo-alt::before { content: "\f3e8"; }
+  .bi-geo::before { content: "\f3e8"; }
   .bi-cart::before { content: "\f244"; }
   .bi-cart2::before { content: "\f243"; }
   .bi-cart3::before { content: "\f244"; }
